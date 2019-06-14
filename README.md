@@ -13,8 +13,11 @@ regards
 
 Yitz.
 
-#DEV profile
--- Model used is Mean --
+#DEV profile:
+
+- Model used is Mean:
+```
 MongoDB Atlas
 ExpressJS
 "Angular 7" \*Updated to Angular 8\*
+```
