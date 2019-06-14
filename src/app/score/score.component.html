@@ -4,19 +4,61 @@
       <div class="card">
         <div class="card-content">
           <form #scoreForm="ngForm" (ngSubmit)="addScore(scoreForm)">
-              <input type="hidden" name="id" #id="ngModel" [(ngModel)]="scoreService.selectedScore.id">
-              <div class="row">
-                <div class="input-field col-s12">
-                  <input type="text" name="game" #name="ngModel" [(ngModel)]="scoreService.selectedScore.game" placeholder="Enter Game">
-                </div>               
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="scoreService.selectedScore._id">
+            <div class="row">
+              <div class="input-field col-s12">
+                <input type="text" name="team" #name="ngModel" [(ngModel)]="scoreService.selectedScore.team"
+                  placeholder="Enter Team">
               </div>
+              <div class="input-field col-s12">
+                <input type="text" name="game" #name="ngModel" [(ngModel)]="scoreService.selectedScore.game"
+                  placeholder="Enter Game">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="date" #name="ngModel" [(ngModel)]="scoreService.selectedScore.date"
+                  placeholder="Enter Game Date">
+              </div>
+              <div class="input-field col-s12">
+                <input type="text" name="points" #name="ngModel" [(ngModel)]="scoreService.selectedScore.points"
+                  placeholder="Enter game total Points">
+              </div>
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right" style="margin-left: 2px;" (click)="resetForm(scoreForm)">New</button>
+                  <button class="btn right">Save</button>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
       </div>
     </div>
     <div class="col s7">
-
+      <table class="striped highlight black-text">
+        <thead>
+          <th>Game</th>
+          <th>Team</th>
+          <th>Date</th>
+          <th>Points</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Score of scoreService.Score">
+            <td>{{ Score.game }}</td>
+            <td>{{ Score.team }}</td>
+            <td>{{ Score.date }}</td>
+            <td>{{ Score.points }}</td>
+            <td>
+              <a (click)="editScore(Score)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteScore(Score._id, scoreForm)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
 </div>
