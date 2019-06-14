@@ -19,6 +19,6 @@ Yitz.
 ```
 MongoDB Atlas
 ExpressJS
-<<<<<<< HEAD
-"Angular 7" \*Updated to Angular 8\*
+"Angular 7"
 ```
+\*Updated to Angular 8\*
