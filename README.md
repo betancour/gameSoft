@@ -17,4 +17,4 @@ Yitz.
 -- Model used is Mean --
 MongoDB Atlas
 ExpressJS
-Angular 7
+"Angular 7" \*Updated to Angular 8\*
